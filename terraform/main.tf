@@ -94,10 +94,37 @@ resource "aws_security_group" "web" {
 
 resource "aws_instance" "web" {
   ami                         = "ami-0c1c30571d2dae5c9"
-  instance_type               = "t2.micro"
+  instance_type               = "t3.micro"
   subnet_id                   = aws_subnet.public.id
   vpc_security_group_ids      = [aws_security_group.web.id]
   associate_public_ip_address = true
+  user_data_replace_on_change = true
+
+  user_data = <<-EOF
+            #!/bin/bash
+
+            apt-get update -y
+            apt-get install -y nginx
+
+            systemctl enable nginx
+            systemctl start nginx
+
+            cat > /var/www/html/index.html <<HTML
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>AWS Infrastructure as Code</title>
+            </head>
+            <body>
+                <h1>Terraform AWS Infrastructure Lab</h1>
+                <p>Infrastructure provisioned automatically with Terraform.</p>
+                <p><strong>Author:</strong> David Tomé Arnaiz</p>
+                <p>AWS • Terraform • EC2 • Nginx</p>
+            </body>
+            </html>
+            HTML
+            EOF
 
   tags = {
     Name        = "devops-lab-ec2"
