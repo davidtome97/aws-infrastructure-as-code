@@ -12,7 +12,7 @@ This project automatically creates a complete networking environment and deploys
 
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-![IaC](https://img.shields.io/badge/Infrastructure-as-Code-blue)
+![Infrastructure as Code](https://img.shields.io/badge/Infrastructure%20as%20Code-Blue)
 
 ---
 
