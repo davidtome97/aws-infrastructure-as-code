@@ -1,8 +1,18 @@
 # AWS Infrastructure as Code with Terraform
 
-Provision a complete AWS infrastructure from scratch using **Terraform** following Infrastructure as Code (IaC) best practices.
+Provisioning a production-style AWS networking environment with Terraform, including VPC, public subnet, Internet Gateway, security groups, routing and automatic EC2 web server deployment.
 
 This project automatically creates a complete networking environment and deploys an EC2 instance running **Nginx**, serving a custom web page.
+
+---
+
+![Terraform](https://img.shields.io/badge/Terraform-1.13+-623CE4?logo=terraform&logoColor=white)
+
+![AWS](https://img.shields.io/badge/AWS-EC2%20%7C%20VPC-FF9900?logo=amazonaws&logoColor=white)
+
+![License](https://img.shields.io/badge/License-MIT-green)
+
+![IaC](https://img.shields.io/badge/Infrastructure-as-Code-blue)
 
 ---
 
@@ -101,7 +111,7 @@ Terraform provisions the EC2 instance and automatically executes a **User Data**
 - AWS EC2
 - AWS VPC
 - AWS Networking
-- Amazon Linux / Ubuntu
+- Amazon Linux 2023
 - Nginx
 - Infrastructure as Code (IaC)
 
@@ -222,17 +232,17 @@ Terraform automatically returns:
 
 ---
 
-# Future Improvements
+# Possible Next Steps
 
 - Remote State (Amazon S3)
 - State Locking (DynamoDB)
 - Terraform Modules
 - Elastic IP
-- Load Balancer
+- Application Load Balancer
 - Auto Scaling Group
 - GitHub Actions CI/CD
-- HTTPS with ACM
-- Route 53
+- HTTPS using ACM
+- Route 53 DNS
 
 ---
 
@@ -242,8 +252,9 @@ Terraform automatically returns:
 
 Cloud & DevOps Engineer
 
-- AWS Certified Solutions Architect – Associate
-- AWS Certified Cloud Practitioner
+AWS Certified Solutions Architect – Associate
+
+AWS Certified Cloud Practitioner
 
 LinkedIn:
 https://linkedin.com/in/david-tome-arnaiz-442729399
